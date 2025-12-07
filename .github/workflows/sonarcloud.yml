@@ -22,14 +22,15 @@ jobs:
         with:
           dotnet-version: '8.0.x'
 
-      # 1) BEGIN: SonarScanner for .NET
+# 1) BEGIN: SonarScanner for .NET
       - name: SonarScanner Begin
         run: |
           dotnet tool install --global dotnet-sonarscanner
           echo "$env:USERPROFILE\.dotnet\tools" >> $env:GITHUB_PATH
+          # У PowerShell зворотна лапка має бути останньою на лінії!
           dotnet sonarscanner begin `
-          /d:sonar.projectKey="9244264-prog_NetSdrClient" ` # <<< ВСТАВЛЕНО КЛЮЧ ПРОЕКТУ
-          /d:sonar.organization="9244264-prog" `          # <<< ВСТАВЛЕНО КЛЮЧ ОРГАНІЗАЦІЇ
+          /d:sonar.projectKey="9244264-prog_NetSdrClient" `
+          /d:sonar.organization="9244264-prog" `
           /d:sonar.token="${{ secrets.SONAR_TOKEN }}" `
           /d:sonar.cs.opencover.reportsPaths="**/coverage.xml" `
           /d:sonar.cpd.cs.minimumTokens=40 `
