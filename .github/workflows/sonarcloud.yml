@@ -29,7 +29,7 @@ jobs:
           dotnet sonarscanner begin `
           /d:sonar.projectKey="<9244264-prog_NetSdrClient>" `
           /d:sonar.organization="<9244264-prog>" `
-          /d:sonar.token="${{ c4ff3c4621a8cb9d68205ad7e39061b910a65c2c }}" `
+          /d:sonar.token="${{ 26dafeaaaf706299581d4b796ba3fbb0e936c638 }}" `
           /d:sonar.cs.opencover.reportsPaths="**/coverage.xml" `
           /d:sonar.cpd.cs.minimumTokens=40 `
           /d:sonar.cpd.cs.minimumLines=5 `
@@ -50,5 +50,5 @@ jobs:
       #  shell: pwsh
       # 3) END: SonarScanner
       - name: SonarScanner End
-        run: dotnet sonarscanner end /d:sonar.token="${{ c4ff3c4621a8cb9d68205ad7e39061b910a65c2c }}"
+        run: dotnet sonarscanner end /d:sonar.token="${{ 26dafeaaaf706299581d4b796ba3fbb0e936c638 }}"
         shell: pwsh
