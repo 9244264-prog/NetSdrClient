@@ -58,7 +58,7 @@ jobs:
           dotnet sonarscanner begin `
           /k:"ppanchen_NetSdrClient" `
           /o:"ppanchen" `
-          /d:sonar.token="${{ secrets.SONAR_TOKEN }}" `
+          /d:sonar.token="${{ SONAR_TOKEN }}" `
           /d:sonar.cs.opencover.reportsPaths="**/coverage.xml" `
           /d:sonar.cpd.cs.minimumTokens=40 `
           /d:sonar.cpd.cs.minimumLines=5 `
@@ -79,5 +79,5 @@ jobs:
       #  shell: pwsh
       # 3) END: SonarScanner
       - name: SonarScanner End
-        run: dotnet sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
+        run: dotnet sonarscanner end /d:sonar.token="${{ SONAR_TOKEN }}"
         shell: pwsh
