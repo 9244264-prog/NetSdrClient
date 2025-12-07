@@ -12,7 +12,7 @@ permissions:
 jobs:
   sonar-check:
     name: Sonar Check
-    runs-on: windows-latest   # безпечно для будь-яких .NET проектів
+    runs-on: windows-latest   
     steps:
       - uses: actions/checkout@v4
         with: { fetch-depth: 0 }
